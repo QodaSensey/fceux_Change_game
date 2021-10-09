@@ -7,6 +7,8 @@ import shutil
 from ctypes import *
 import sys
 
+# это часть для WinAPI, в данный момент не используется (можно убрать)
+# ------------------------------------------------------------------------------
 # здесь определяется разрядность архитектуры
 is_64bit_arch = sys.maxsize > 2**32
 # необходимые типы 
@@ -42,6 +44,7 @@ def press_key(key_vk, window_title):
     SendMessage(handle, WM_KEYDOWN, wParam, lParamDown) 
     # отправляем сообщение об отпускании клавиши
     return SendMessage(handle, WM_KEYUP, wParam, lParamUp) 
+# --------------------------------------------------------------------------------
 
 PATH_ROMS = 'fcs\\'
 START_ROM = '1.fc0'
